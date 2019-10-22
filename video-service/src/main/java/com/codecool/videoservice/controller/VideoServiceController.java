@@ -1,7 +1,7 @@
 package com.codecool.videoservice.controller;
 
-import com.codecool.videoservice.Model.Video;
-import com.codecool.videoservice.repository.VideoRepository;
+import com.codecool.videoservice.model.Video;
+import com.codecool.videoservice.service.VideoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +16,11 @@ import java.util.List;
 public class VideoServiceController {
 
     @Autowired
-    private VideoRepository videoRepository;
+    private VideoService videoService;
 
     @GetMapping("/all")
     public List<Video> getAllVideos(){
-        return videoRepository.findAll();
+        return videoService.getAllVideos();
     }
 
 

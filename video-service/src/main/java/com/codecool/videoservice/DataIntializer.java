@@ -1,6 +1,6 @@
 package com.codecool.videoservice;
 
-import com.codecool.videoservice.Model.Video;
+import com.codecool.videoservice.model.Video;
 import com.codecool.videoservice.repository.VideoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

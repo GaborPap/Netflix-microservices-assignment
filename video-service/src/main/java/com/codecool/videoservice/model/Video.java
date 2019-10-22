@@ -1,4 +1,4 @@
-package com.codecool.videoservice.Model;
+package com.codecool.videoservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
