@@ -11,4 +11,6 @@ public interface RecommendationRepository extends JpaRepository<Recommendation, 
     Optional<Recommendation> findById(long id);
     Optional<List<Recommendation>> findAllByVideoId(long videoId);
 
+    @Override
+    void deleteById(Long recId);
 }

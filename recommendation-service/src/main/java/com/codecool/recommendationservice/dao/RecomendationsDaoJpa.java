@@ -36,6 +36,10 @@ public class RecomendationsDaoJpa {
         return recommendation;
     }
 
+    public void deleteRecommendation(Long recId){
+        recommendationRepository.deleteById(recId);
+    }
+
     public Recommendation updateRecommendation(Recommendation recommendation){
         if (recommendation==null)
             return null;

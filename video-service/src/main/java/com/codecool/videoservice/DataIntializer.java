@@ -28,8 +28,32 @@ public class DataIntializer implements CommandLineRunner {
                 .name("Microservices 2")
                 .url("https://www.youtube.com/watch?v=APQgg7gDrfg")
                 .build();
+
+        Video video3 = Video.builder()
+                .name("React with net ninja 3")
+                .url("https://www.youtube.com/watch?v=1I-vfkOVAXU")
+                .build();
+
+        Video video4 = Video.builder()
+                .name("React with net ninja 3")
+                .url("https://www.youtube.com/watch?v=1I-vfkOVAXU")
+                .build();
+
+        Video video5 = Video.builder()
+                .name("React with net ninja 3")
+                .url("https://www.youtube.com/watch?v=1I-vfkOVAXU")
+                .build();
+
+        Video video6 = Video.builder()
+                .name("React with net ninja 3")
+                .url("https://www.youtube.com/watch?v=1I-vfkOVAXU")
+                .build();
         videoRepository.save(video);
         videoRepository.save(video2);
+        videoRepository.save(video3);
+        videoRepository.save(video4);
+        videoRepository.save(video5);
+        videoRepository.save(video6);
 
        log.info(videoRepository.findAll().toString());
     }

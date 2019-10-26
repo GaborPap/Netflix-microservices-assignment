@@ -4,6 +4,8 @@ import com.codecool.recommendationservice.dao.RecomendationsDaoJpa;
 import com.codecool.recommendationservice.model.Recommendation;
 import com.codecool.recommendationservice.repository.RecommendationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/recommendations")
+@CrossOrigin
 public class Controller {
 
     @Autowired
@@ -42,4 +45,12 @@ public class Controller {
     public Recommendation updateRecommendation(@RequestBody Recommendation recommendations) {
         return recomendationsDaoJpa.updateRecommendation(recommendations);
     }
+
+    @DeleteMapping("/deleteRec/{recId}")
+    public ResponseEntity deleteRecommendation(@PathVariable("recId") Long recId){
+        recomendationsDaoJpa.deleteRecommendation(recId);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+
 }
