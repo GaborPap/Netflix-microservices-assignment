@@ -71,10 +71,10 @@ public class RecommendationsControllerService {
         return restTemplate.postForObject(baseUrl + "/addRec", request, Recommendation.class);
     }
 
-    public Recommendation updateRecommendations(Recommendation recommendation) {
+    public Recommendation updateRecommendations(Recommendation recommendation, Long recId) {
         HttpEntity<Recommendation> request = new HttpEntity<>(recommendation);
 
-        return restTemplate.postForObject(baseUrl + "/updateRec", request, Recommendation.class);
+        return restTemplate.postForObject(baseUrl + "/updateRec/"+recId, request, Recommendation.class);
     }
 
     public VideoWithRecommendations getVideoWithRecommendations(Long videoId) {

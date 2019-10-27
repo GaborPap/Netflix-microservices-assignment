@@ -40,13 +40,12 @@ public class RecomendationsDaoJpa {
         recommendationRepository.deleteById(recId);
     }
 
-    public Recommendation updateRecommendation(Recommendation recommendation){
+    public Recommendation updateRecommendation(Long recId, Recommendation recommendation){
         if (recommendation==null)
             return null;
-        if (recommendation.getId()==null)
-            return null;
 
-        Optional<Recommendation> recOptional = recommendationRepository.findById(recommendation.getId());
+
+        Optional<Recommendation> recOptional = recommendationRepository.findById(recId);
         if (recOptional.isPresent()) {
 
             Recommendation currentRec = recOptional.get();

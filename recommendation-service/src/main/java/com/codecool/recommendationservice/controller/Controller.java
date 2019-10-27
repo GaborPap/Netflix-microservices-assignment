@@ -41,9 +41,9 @@ public class Controller {
         return recommendation;
     }
 
-    @PostMapping("/updateRec")
-    public Recommendation updateRecommendation(@RequestBody Recommendation recommendations) {
-        return recomendationsDaoJpa.updateRecommendation(recommendations);
+    @PostMapping("/updateRec/{recId}")
+    public Recommendation updateRecommendation(@RequestBody Recommendation recommendations, @PathVariable("recId") Long recId) {
+        return recomendationsDaoJpa.updateRecommendation(recId, recommendations);
     }
 
     @DeleteMapping("/deleteRec/{recId}")

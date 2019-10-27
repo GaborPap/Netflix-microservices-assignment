@@ -17,11 +17,6 @@ public class RecommendationsController {
     @Autowired
     private RecommendationsControllerService recommendationsControllerService;
 
-   /* @GetMapping("/video/{videoId}")
-    public List<Recommendation> getAllRecForVideo(@PathVariable("videoId") long videoId) {
-        return recommendationsControllerService.getRecForVideo(videoId);
-    }*/
-
     @GetMapping("/allRec")
     public List<Recommendation> getAllRec() {
         return recommendationsControllerService.getAllRec();
@@ -34,15 +29,13 @@ public class RecommendationsController {
 
 
     @PostMapping("/addRecommendation")
-
     public Recommendation addRecommendation(@RequestBody Recommendation recommendations) {
-        System.out.println(recommendations);
         return recommendationsControllerService.addRecommendation(recommendations);
     }
 
-    @PostMapping("/updateRecommendation")
-    public Recommendation updateRecommendation(@RequestBody Recommendation recommendations) {
-        return recommendationsControllerService.updateRecommendations(recommendations);
+    @PostMapping("/updateRecommendation/{recId}")
+    public Recommendation updateRecommendation(@RequestBody Recommendation recommendations, @PathVariable("recId") Long recId) {
+        return recommendationsControllerService.updateRecommendations(recommendations, recId);
     }
 
     @GetMapping("/video/{id}")
