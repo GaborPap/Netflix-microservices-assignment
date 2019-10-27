@@ -33,9 +33,10 @@ public class RecommendationsController {
         return recommendationsControllerService.addRecommendation(recommendations);
     }
 
-    @PostMapping("/updateRecommendation/{recId}")
-    public Recommendation updateRecommendation(@RequestBody Recommendation recommendations, @PathVariable("recId") Long recId) {
-        return recommendationsControllerService.updateRecommendations(recommendations, recId);
+    @PutMapping("/updateRecommendation/{recId}")
+    public ResponseEntity updateRecommendation(@RequestBody Recommendation recommendations, @PathVariable("recId") Long recId) {
+        recommendationsControllerService.updateRecommendations(recommendations, recId);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @GetMapping("/video/{id}")

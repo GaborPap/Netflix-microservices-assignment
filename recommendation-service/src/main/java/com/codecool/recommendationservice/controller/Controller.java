@@ -41,9 +41,10 @@ public class Controller {
         return recommendation;
     }
 
-    @PostMapping("/updateRec/{recId}")
-    public Recommendation updateRecommendation(@RequestBody Recommendation recommendations, @PathVariable("recId") Long recId) {
-        return recomendationsDaoJpa.updateRecommendation(recId, recommendations);
+    @PutMapping("/updateRec/{recId}")
+    public ResponseEntity updateRecommendation(@RequestBody Recommendation recommendations, @PathVariable("recId") Long recId) {
+        recomendationsDaoJpa.updateRecommendation(recId, recommendations);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @DeleteMapping("/deleteRec/{recId}")
