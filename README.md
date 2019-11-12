@@ -22,3 +22,6 @@ On details page we can see the details of selected video with the recommendation
 
 
 <hr>
+
+**Used technologies**
+- Spring boot framework
