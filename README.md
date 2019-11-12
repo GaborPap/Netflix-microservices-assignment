@@ -1,4 +1,4 @@
-**Video list with recommendations**
+**Video provider site with recommendations**
 
 
 
